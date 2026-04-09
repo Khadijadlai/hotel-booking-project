@@ -1,0 +1,28 @@
+# Dépendances
+node_modules/
+npm-debug.log
+__pycache__/
+*.pyc
+.env
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# Git
+.git/
+.gitignore
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Tests
+coverage/
+*.test.js
+*.spec.js

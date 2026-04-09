@@ -1,0 +1,28 @@
+services:
+  # Service Backend (dans dossier "code")
+  backend:
+    build: ./code
+    container_name: hotel-backend
+    ports:
+      - "8000:8000"
+    environment:
+      - PYTHONUNBUFFERED=1
+    restart: unless-stopped
+    networks:
+      - hotel-network
+
+  # Service Frontend
+  frontend:
+    build: ./frontend
+    container_name: hotel-frontend
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    restart: unless-stopped
+    networks:
+      - hotel-network
+
+networks:
+  hotel-network:
+    driver: bridge
